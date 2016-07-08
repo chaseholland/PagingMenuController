@@ -29,15 +29,15 @@ open class MenuView: UIScrollView {
     }(UIView(frame: .zero))
     fileprivate var menuViewBounces: Bool {
         switch menuOptions.displayMode {
-        case .standard(_, _, .scrollEnabledAndBouces),
+        case .standard(_, _, .scrollEnabledAndBouces, _),
              .infinite(_, .scrollEnabledAndBouces): return true
         default: return false
         }
     }
     fileprivate var menuViewScrollEnabled: Bool {
         switch menuOptions.displayMode {
-        case .standard(_, _, .scrollEnabledAndBouces),
-             .standard(_, _, .scrollEnabled),
+        case .standard(_, _, .scrollEnabledAndBouces, _),
+             .standard(_, _, .scrollEnabled, _),
              .infinite(_, .scrollEnabledAndBouces),
              .infinite(_, .scrollEnabled): return true
         default: return false
@@ -45,7 +45,7 @@ open class MenuView: UIScrollView {
     }
     fileprivate var contentOffsetX: CGFloat {
         switch menuOptions.displayMode {
-        case .standard(_, let centerItem, _) where centerItem:
+        case .standard(_, let centerItem, _, _) where centerItem:
             return centerOfScreenWidth
         case .segmentedControl:
             return contentOffset.x
@@ -310,7 +310,11 @@ open class MenuView: UIScrollView {
     
     fileprivate func adjustmentContentInsetIfNeeded() {
         switch menuOptions.displayMode {
+<<<<<<< e6fa6d50523ca78593132430984470a596d945ee
         case .standard(_, let centerItem, _) where centerItem: break
+=======
+        case let .Standard(_, centerItem, _, _) where centerItem: break
+>>>>>>> adding option to disable swiping to switch items on paging items menu
         default: return
         }
         
