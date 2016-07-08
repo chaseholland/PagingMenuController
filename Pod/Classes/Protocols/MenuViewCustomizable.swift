@@ -43,7 +43,7 @@ public extension MenuViewCustomizable {
         return true
     }
     var displayMode: MenuDisplayMode {
-        return .standard(widthMode: .flexible, centerItem: false, scrollingMode: .pagingEnabled)
+        return .standard(widthMode: .flexible, centerItem: false, scrollingMode: .pagingEnabled, menuSwipeSwitchesItems: true)
     }
     var focusMode: MenuFocusMode {
         return .underline(height: 3, color: UIColor.blue, horizontalPadding: 0, verticalPadding: 0)
@@ -60,9 +60,15 @@ public extension MenuViewCustomizable {
 }
 
 public enum MenuDisplayMode {
+<<<<<<< e6fa6d50523ca78593132430984470a596d945ee
     case standard(widthMode: MenuItemWidthMode, centerItem: Bool, scrollingMode: MenuScrollingMode)
     case segmentedControl
     case infinite(widthMode: MenuItemWidthMode, scrollingMode: MenuScrollingMode)
+=======
+    case Standard(widthMode: MenuItemWidthMode, centerItem: Bool, scrollingMode: MenuScrollingMode, menuSwipeSwitchesItems: Bool)
+    case SegmentedControl
+    case Infinite(widthMode: MenuItemWidthMode, scrollingMode: MenuScrollingMode)
+>>>>>>> adding option to disable swiping to switch items on paging items menu
 }
 
 public enum MenuItemWidthMode {

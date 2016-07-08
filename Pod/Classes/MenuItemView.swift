@@ -297,7 +297,7 @@ extension MenuItemView: LabelSizeCalculatable {
         
         let itemWidth: CGFloat
         switch menuOptions.displayMode {
-        case .standard(let widthMode, _, _):
+        case .standard(let widthMode, _, _, _):
             itemWidth = labelWidth(widthMode, estimatedSize: estimatedLabelSize(label))
         case .segmentedControl:
             itemWidth = maxWidth / CGFloat(menuOptions.itemsOptions.count)
