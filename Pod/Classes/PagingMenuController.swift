@@ -314,7 +314,7 @@ extension PagingMenuController: UIScrollViewDelegate {
         guard let menuOptions = menuOptions else { return }
         
         switch (menuOptions.displayMode, scrollView) {
-        case (.Standard(widthMode: _, centerItem: _, scrollingMode: _, menuSwipeSwitchesItems: false), self.menuView!):
+        case (.standard(widthMode: _, centerItem: _, scrollingMode: _, menuSwipeSwitchesItems: false), self.menuView!):
             return
         default:
             break
@@ -469,13 +469,8 @@ extension PagingMenuController {
         guard let menuOptions = menuOptions else { return }
         
         switch menuOptions.displayMode {
-<<<<<<< e6fa6d50523ca78593132430984470a596d945ee
-        case .standard(_, _, .pagingEnabled): break
+        case .standard(_, _, .pagingEnabled, _): break
         case .infinite(_, .pagingEnabled): break
-=======
-        case .Standard(_, _, .PagingEnabled, _): break
-        case .Infinite(_, .PagingEnabled): break
->>>>>>> adding option to disable swiping to switch items on paging items menu
         default: return
         }
         
@@ -494,11 +489,7 @@ extension PagingMenuController {
         
         let newPage: Int
         switch menuOptions.displayMode {
-<<<<<<< e6fa6d50523ca78593132430984470a596d945ee
-        case .standard(_, _, .pagingEnabled):
-=======
-        case .Standard(_, _, .PagingEnabled, _):
->>>>>>> adding option to disable swiping to switch items on paging items menu
+        case .standard(_, _, .pagingEnabled, _):
             newPage = page < currentPage ? menuView.currentPage - 1 : menuView.currentPage + 1
         case .infinite(_, .pagingEnabled):
             if menuItemView.frame.midX > menuView.currentMenuItemView.frame.midX {

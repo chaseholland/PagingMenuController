@@ -323,7 +323,7 @@ extension MenuItemView {
         return CGSize(width: itemWidth + horizontalMargin * 2, height: itemHeight)
     }
     
-    private var maxWindowSize: CGFloat {
+    fileprivate var maxWindowSize: CGFloat {
         return UIScreen.main.bounds.width
     }
 }
