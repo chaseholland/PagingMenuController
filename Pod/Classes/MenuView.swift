@@ -297,11 +297,7 @@ open class MenuView: UIScrollView {
     
     fileprivate func adjustmentContentInsetIfNeeded() {
         switch menuOptions.displayMode {
-<<<<<<< e6fa6d50523ca78593132430984470a596d945ee
-        case .standard(_, let centerItem, _) where centerItem: break
-=======
-        case let .Standard(_, centerItem, _, _) where centerItem: break
->>>>>>> adding option to disable swiping to switch items on paging items menu
+        case .standard(_, let centerItem, _, _) where centerItem: break
         default: return
         }
         

@@ -220,8 +220,6 @@ open class MenuItemView: UIView {
         let width: CGFloat
         switch menuOptions.displayMode {
         case .segmentedControl:
-            width = UIApplication.shared.keyWindow!.bounds.size.width / CGFloat(menuOptions.itemsOptions.count)
-        case .SegmentedControl:
             width = self.frame.size.width / CGFloat(menuOptions.itemsOptions.count)
         default:
             width = image.size.width + horizontalMargin * 2
@@ -309,7 +307,7 @@ extension MenuItemView: LabelSizeCalculatable {
         return CGSize(width: itemWidth + horizontalMargin * 2, height: itemHeight)
     }
     
-    private var maxWindowSize: CGFloat {
+    fileprivate var maxWindowSize: CGFloat {
         return UIScreen.main.bounds.width
     }
 }
